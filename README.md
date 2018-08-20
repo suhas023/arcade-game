@@ -12,4 +12,4 @@
 - To reset after raching the goal, press up-arrow key on the edge the stream.
 
 # Screenshot
-![sample shot](/screenshot/arcade.png?raw=true)
+![sample shot](/screenshot/arcade2.png?raw=true)
