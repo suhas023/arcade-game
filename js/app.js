@@ -16,7 +16,10 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
+    //calculate new x coordinate
     let newX = this.x + this.speed * dt;
+
     // When enemy moves outside reset the enemy with new values
     if (newX >= 498) {
         this.x = -83;
@@ -26,7 +29,8 @@ Enemy.prototype.update = function(dt) {
     }
     else
         this.x =  newX;
-    if((Math.abs(this.x - player.x) <= 30) && (Math.abs(this.y - player.y) <= 42))
+    //check for collision
+    if((Math.abs(this.x - player.x) <= 70) && (Math.abs(this.y - player.y) < 52))
         player.reset();
 };
 
@@ -83,9 +87,8 @@ Player.prototype.handleInput = function(key) {
 
 
 
-var allEnemies = [new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()];
+var allEnemies = [ new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()];
 var player = new Player()
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
