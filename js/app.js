@@ -2,9 +2,9 @@
 var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-    this.speed = Math.floor(Math.random() * 100) + 100;
+    this.speed = Math.floor(Math.random() * 100) + 125;
     this.x = Math.floor(Math.random() * (-183)) - 83;
-    this.y = Math.random() * 225 + 25;
+    this.y = Math.random() * 170 + 50;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -25,7 +25,7 @@ Enemy.prototype.update = function(dt) {
         this.x = -83;
         // get new y coordinat and speed for the enemy
         this.speed = Math.floor(Math.random() * 100) + 125;
-        this.y = Math.random() * 225 + 25;
+        this.y = Math.random() * 170 + 50;
     }
     else
         this.x =  newX;
@@ -55,6 +55,7 @@ Player.prototype.constructor = Player;
 
 Player.prototype.update = function() {
     // show winner banner if the player reaches the top
+    console.log(this.x, this.y);
     if(this.y < 23) {
         winner.style.visibility = "visible";
     }
@@ -74,8 +75,8 @@ Player.prototype.reset = function() {
 
 Player.prototype.handleInput = function(key) {
     switch(key) {
-        case 'left':    this.x -= (this.x > 1) ? 25 : 0;                break;
-        case 'right':   this.x += (this.x < 410) ? 25 : 0;              break;
+        case 'left':    this.x -= (this.x > 25) ? 25 : 0;               break;
+        case 'right':   this.x += (this.x < 400) ? 25 : 0;              break;
         case 'up':      this.y -= 30;                                   break;
         case 'down':    this.y += (this.y < 400)? 30:0;                 break;
     }
