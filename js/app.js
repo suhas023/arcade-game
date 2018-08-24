@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function() {
+let Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     this.speed = Math.floor(Math.random() * 100) + 125;
@@ -57,7 +57,7 @@ Player.prototype.update = function() {
     // show winner banner if the player reaches the top
     console.log(this.x, this.y);
     if(this.y < 23) {
-        winner.style.visibility = "visible";
+        winner.style.visibility = 'visible';
     }
 
     // reset the game if player jums of the top.
@@ -68,7 +68,7 @@ Player.prototype.update = function() {
 
 Player.prototype.reset = function() {
     //hide the winner banner
-    winner.style.visibility = "hidden";
+    winner.style.visibility = 'hidden';
     this.y = 414;
     this.x = 202;
 }
@@ -88,13 +88,13 @@ Player.prototype.handleInput = function(key) {
 
 
 
-var allEnemies = [ new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()];
-var player = new Player()
+let allEnemies = [ new Enemy(), new Enemy(), new Enemy(), new Enemy(), new Enemy()];
+let player = new Player()
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
+    let allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
